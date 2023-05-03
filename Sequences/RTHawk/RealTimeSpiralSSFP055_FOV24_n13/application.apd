@@ -1,0 +1,26 @@
+[Application]
+defaultName= YL Speech RT SSFP FOV24 RES2.4 n13 vieworder
+categories = Yongwan
+controlScript = control.js
+reconScript = recon.js
+interface = lib:threeplane.ui
+continuous = 1
+reconPriority = 2
+sharedSlot = Real-Time
+calibrations = RealTimeShimming, Adjustments, CFtuning
+
+[sequence]
+type = waveform
+file = RealTimeSpiralSSFP055_FOV24_n13.spv
+associatedRF = sequence
+linearPhaseIncrement = 180
+loopIndex = 0
+
+[test]
+type = loop
+maximumIndex = 2
+loopIndex = 1
+
+;[audiotrigger] 
+;type = digital 
+;mask = 1
