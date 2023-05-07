@@ -12,7 +12,7 @@ numpy==1.19.5
 packaging==23.1
 Pillow==9.5.0
 pyparsing==3.0.9
-pypulseq==1.4.0
+pypulseq@git+https://github.com/imr-framework/pypulseq.git@dev
 python-dateutil==2.8.2
 PyWavelets==1.4.1
 scipy==1.10.1
