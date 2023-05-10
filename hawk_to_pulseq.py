@@ -132,9 +132,9 @@ def load_waveform(waveform_raw_file, waveform):
 
     RF_phase = np.reshape(RF_phase, (repetitions, -1))
     RF_amp = np.reshape(RF_amp, (repetitions, -1))
-    Gx = np.reshape(Gx, (repetitions, -1))
-    Gy = np.reshape(Gy, (repetitions, -1))
-    Gz = np.reshape(Gz, (repetitions, -1))
+    Gx = np.pad(np.reshape(Gx, (repetitions, -1)), (0, 1))
+    Gy = np.pad(np.reshape(Gy, (repetitions, -1)), (0, 1))
+    Gz = np.pad(np.reshape(Gz, (repetitions, -1)), (0, 1))
 
     # Convert units. Crucially important for the units to be correct.
     # kHz/m
