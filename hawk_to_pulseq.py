@@ -284,9 +284,17 @@ def truncate_zero_padded_amplitudes(data, extra_pad=10, start_only=False):
     else:
         # find the first non-zero index
         first_nonzero = np.max([np.nonzero(data)[1][0]-extra_pad,0])
+        if first_nonzero == 0:
+            # add extra_pad samples to the beginning of the data
+            data = np.pad(data, ((0,0),(extra_pad,0)), 'constant', constant_values=0)
+            first_nonzero = 0
 
     # find the last non-zero index
     last_nonzero = np.min([np.nonzero(data)[1][-1]+extra_pad-1, data.shape[1]-1])
+    if last_nonzero == data.shape[1]-1:
+        # add extra_pad samples to the end of the data
+        data = np.pad(data, ((0,0),(0,extra_pad)), 'constant', constant_values=0)
+        last_nonzero = data.shape[1]-1
     
     # remove the zeros from the beginning and end, with 10 samples of padding
     data = data[:,first_nonzero:last_nonzero]
