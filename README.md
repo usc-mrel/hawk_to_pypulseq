@@ -13,3 +13,6 @@ Tested and built on python 3.8.10.
 
 ## Run code:
 `python3 run_hawk_to_pulseq_convertor.py`
+
+## Dynamic Imaging Reconstruction
+Submodule for a MATLAB ISMRMRD reconstruction using FIRE is linked to this repository for it to be a main resource for ISMRM abstract 2402: Open-source dynamic MRI workflow for reproducible research
